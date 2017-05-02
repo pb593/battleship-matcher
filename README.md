@@ -1,2 +1,2 @@
 # battleship-matcher
-Battleship Matching Engine in Akka
+Battleship Matching Engine in Akka and Play2
