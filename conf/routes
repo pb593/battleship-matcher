@@ -1,2 +1,4 @@
 GET     /                   @controllers.ApplicationController.index
 GET     /hello/:name        @controllers.ApplicationController.sayHello(name: String)
+
+GET     /ws                 @controllers.ApplicationController.socket
