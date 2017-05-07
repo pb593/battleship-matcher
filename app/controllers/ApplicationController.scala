@@ -5,6 +5,7 @@ import actors.{HelloActor, MyWebSocketActor}
 import actors.HelloActor.SayHello
 import akka.pattern.ask
 import akka.util.Timeout
+import models._
 import play.api.libs.concurrent.Akka
 import play.api.libs.concurrent.Execution.Implicits.defaultContext
 import play.api.mvc.{Action, Controller, WebSocket}
@@ -28,7 +29,7 @@ class ApplicationController extends Controller {
     }
   }
 
-  def socket = WebSocket.acceptWithActor[String, String] { request => out =>
+  def socket = WebSocket.acceptWithActor[InEvent, OutEvent] { request => out =>
     MyWebSocketActor.props(out)
   }
 
